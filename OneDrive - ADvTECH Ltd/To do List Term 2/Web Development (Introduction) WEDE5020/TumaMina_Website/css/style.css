@@ -1,0 +1,524 @@
+/* ============================================
+   TUMAMINA - Part 2
+   Web Deveelopment (Introduction) - WEDE5020
+   Author: Neo Praise Mahlangu (ST10521004)
+   ================================================ */
+
+
+/* ============================================
+   1. CSS RESET & BASE STYLES
+   ================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;              /* Dark Grey - body text */
+    background-color: #F5F7FA;   /* Light Grey - page background */
+}
+
+
+/* ============================================
+   2. TYPOGRAPHY
+   ============================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #1A2B4C;              /* Dark Blue - headings */
+    margin-bottom: 0.6em;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.7rem; margin-top: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #2D9B8E;              /* Teal */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1A2B4C;
+}
+
+
+/* ============================================
+   3. LAYOUT CONTAINER
+   ================================================ */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* ============================================
+   4. HEADER & NAVIGATION
+   ================================================ */
+header {
+    background-color: #1A2B4C;   /* Dark Blue */
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: #2D9B8E;              /* Teal accent */
+}
+
+nav ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+}
+
+nav a {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Pseudo-class: hover effect on nav links */
+nav a:hover {
+    background-color: #2D9B8E;
+    color: #FFFFFF;
+}
+
+
+/* ============================================
+   5. HEROSECTION (Homepage)
+   ============================================ */
+.hero {
+    background-color: #1A2B4C;
+    background-image: linear-gradient(rgba(26, 43, 76, 0.85), rgba(26, 43, 76, 0.85)), url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    color: #FFFFFF;
+    margin-bottom: 0.8rem;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    color: #F5F7FA;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* ============================================
+   6. BUTTONS
+   ============================================ */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #2D9B8E;
+    color: #FFFFFF;
+    border-color: #2D9B8E;
+}
+
+.btn-primary:hover {
+    background-color: #FFFFFF;
+    color: #2D9B8E;
+    border-color: #FFFFFF;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #FFFFFF;
+    color: #1A2B4C;
+}
+
+
+/* ============================================
+   7. CONTENT SECTIONS
+   ============================================ */
+.content-section {
+    background-color: #FFFFFF;
+    padding: 3rem 2.5rem;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.content-section h1 {
+    border-bottom: 3px solid #2D9B8E;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-section h2 {
+    margin-top: 2rem;
+}
+
+
+/* ============================================
+   8. HOME PAGE - HOW IT WORKS STEPS
+   ============================================ */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.step {
+    background-color: #F5F7FA;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #2D9B8E;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.step h3 {
+    color: #1A2B4C;
+    margin-bottom: 0.5rem;
+}
+
+
+/* ============================================
+   9. TRUST LIST
+   ============================================ */
+.trust-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.trust-list li {
+    padding: 0.6rem 0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid #E0E4EB;
+}
+
+.trust-list li:last-child {
+    border-bottom: none;
+}
+
+
+/* ============================================
+   10. SERVICES PAGE - SERVICE LIST
+   ============================================ */
+.service-list {
+    list-style: none;
+    margin: 1rem 0 1.5rem 0;
+}
+
+.service-list li {
+    padding: 0.6rem 0 0.6rem 1.8rem;
+    position: relative;
+    border-bottom: 1px solid #E0E4EB;
+}
+
+.service-list li::before {
+    content: "✓";
+    color: #2D9B8E;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+}
+
+
+/* ============================================
+   11. PRICING TABLE
+   ==================================================== */
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-table th {
+    background-color: #1A2B4C;
+    color: #FFFFFF;
+    padding: 1rem;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+.pricing-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #E0E4EB;
+}
+
+.pricing-table tr:last-child td {
+    border-bottom: none;
+}
+
+.pricing-table tr:hover td {
+    background-color: #F5F7FA;
+}
+
+
+/* ============================================
+   12. FORMS (Enquiry & Contact pages)
+   ============================================= */
+form {
+    margin-top: 1.5rem;
+    max-width: 600px;
+}
+
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    margin-top: 1rem;
+    color: #1A2B4C;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #E0E4EB;
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #333333;
+    background-color: #FFFFFF;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #2D9B8E;
+    box-shadow: 0 0 0 3px rgba(45, 155, 142, 0.15);
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    margin-top: 1.5rem;
+}
+
+
+/* ============================================
+   13. CONTACT INFO BLOCK
+   ==-----========================================== */
+.contact-info {
+    background-color: #F5F7FA;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #2D9B8E;
+}
+
+.contact-info p {
+    margin-bottom: 0.6rem;
+}
+
+
+/* ============================================
+   14. FOOTER
+   ======================================-====== */
+footer {
+    background-color: #1A2B4C;
+    color: #F5F7FA;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: #2D9B8E;
+    margin: 0 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #FFFFFF;
+}
+
+footer p {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    color: #C5CBD6;
+}
+
+
+/* ============================================
+   15. RESPONSIVE DESIGN
+   ==================================--========== */
+
+/* --- TABLET & SMALLER (max-width: 768px) --- */
+@media (max-width: 768px) {
+
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; }
+
+    /* Header stacks vertically */
+    header .container {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    /* Nav wraps into rows */
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    /* Hero smaller */
+    .hero {
+        padding: 3.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    /* Steps stack into single column */
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    /* Content sections get tighter padding */
+    .content-section {
+        padding: 2rem 1.5rem;
+    }
+}
+
+
+/* --- MOBILE (max-width: 480px) --- */
+@media (max-width: 480px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1.05rem; }
+
+    .container {
+        width: 95%;
+    }
+
+    /* Buttons stack vertically and take full width */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 85%;
+        text-align: center;
+    }
+
+    .logo a {
+        font-size: 1.5rem;
+    }
+
+    /* Pricing table font smaller */
+    .pricing-table th,
+    .pricing-table td {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    /* Footer links wrap nicely */
+    .footer-links a {
+        display: inline-block;
+        margin: 4px 6px;
+        font-size: 0.85rem;
+    }
+
+    .content-section {
+        padding: 1.5rem 1rem;
+    }
+}
