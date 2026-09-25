@@ -26,6 +26,14 @@ body {
     background-color: #F5F7FA;   /* Light Grey - page background */
 }
 
+.page-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    display: block;
+}
 
 /* ============================================
    2. TYPOGRAPHY
@@ -443,7 +451,12 @@ footer p {
         justify-content: center;
         gap: 5px;
     }
-
+    
+    @media (max-width: 480px) {
+    .page-image {
+        border-radius: 4px;
+    }
+}
     nav a {
         font-size: 0.9rem;
         padding: 6px 10px;
