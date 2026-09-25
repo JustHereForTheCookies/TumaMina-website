@@ -32,7 +32,17 @@
 - Navigation, steps grid, buttons, and typography all adapt to smaller screens.
 
 ### Screenshots
-> *(Insert your screenshots here — Desktop, Tablet, Mobile)*
+### Screenshots
+
+### Desktop View
+![Desktop View] (screenshot/desktop.png)
+
+### Tablet View
+![Tablet View] (screenshot/tablet.png)
+
+### Mobile View
+![Mobile View] (screenshot/mobile.png)
+
 
 ---
 
